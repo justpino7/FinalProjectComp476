@@ -147,8 +147,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118224312}
-  m_LocalRotation: {x: -0.13322978, y: -0.0016062177, z: -0.00021592122, w: 0.99108386}
-  m_LocalPosition: {x: -0.70989347, y: 1.9678178, z: -203.66391}
+  m_LocalRotation: {x: -0.13491167, y: -0.001605849, z: -0.00021864701, w: 0.9908563}
+  m_LocalPosition: {x: -0.70989347, y: 2.6278176, z: -203.66391}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -184,6 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 118296140}
+  - component: {fileID: 118296141}
   m_Layer: 0
   m_Name: BlasterLeft
   m_TagString: Untagged
@@ -206,6 +207,21 @@ Transform:
   m_Father: {fileID: 164605919}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &118296141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118296139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5cc6e5b60a3224dafeba36aa285aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5427540, guid: 32e0704777e8c5446a3abc9cb68b91b7, type: 3}
+  crosshair: {fileID: 428510085}
+  velocity: 100
 --- !u!1 &164605918
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,9 +545,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428510084}
-  m_LocalRotation: {x: -0.03883074, y: -0.05870547, z: 0.0022852505, w: 0.9975173}
-  m_LocalPosition: {x: 0, y: 0, z: 40}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalRotation: {x: -0.038830742, y: -0.05870548, z: 0.0022852514, w: 0.9975173}
+  m_LocalPosition: {x: 0.000000014901161, y: 0.0000019073486, z: 80}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 164605919}
@@ -1807,8 +1823,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.13322978, y: -0.0016062177, z: -0.00021592122, w: 0.99108386}
-  m_LocalPosition: {x: -0.6848834, y: -0.14485788, z: -211.37987}
+  m_LocalRotation: {x: -0.13491167, y: -0.001605849, z: -0.00021864701, w: 0.9908563}
+  m_LocalPosition: {x: -0.6849068, y: 0.48896265, z: -211.37265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2240,7 +2256,7 @@ MonoBehaviour:
     roll: 0
   - position: {x: 0, y: 0, z: 0}
     roll: 0
-  - position: {x: 0, y: 0, z: 100}
+  - position: {x: 0, y: 4.7617493, z: 100}
     roll: 0
   - position: {x: -37.870163, y: 20.49706, z: 209.9012}
     roll: 0
@@ -2290,7 +2306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173021388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 5.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2434,9 +2450,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283123063}
-  m_LocalRotation: {x: -0.03883074, y: -0.05870547, z: 0.0022852505, w: 0.9975173}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalRotation: {x: -0.038830742, y: -0.05870548, z: 0.0022852514, w: 0.9975173}
+  m_LocalPosition: {x: 0.000000007450581, y: 0.00000047683716, z: 40}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 164605919}
@@ -2628,6 +2644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1457787740}
+  - component: {fileID: 1457787741}
   m_Layer: 0
   m_Name: BlasterRight
   m_TagString: Untagged
@@ -2650,6 +2667,21 @@ Transform:
   m_Father: {fileID: 164605919}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1457787741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457787739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5cc6e5b60a3224dafeba36aa285aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5427540, guid: 32e0704777e8c5446a3abc9cb68b91b7, type: 3}
+  crosshair: {fileID: 428510085}
+  velocity: 100
 --- !u!4 &1465987738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d74acb39022f8fb4687bc890130094dc, type: 3}
