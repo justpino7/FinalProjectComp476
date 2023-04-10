@@ -289,9 +289,20 @@ MonoBehaviour:
   xySpeed: 12
   lookSpeed: 10000
   forwardSpeed: 12
+  barrelRollSpeed: 2000
+  barrelRollCooldown: 1
   aimTarget: {fileID: 794646373}
   dolly: {fileID: 118224314}
   joystick: 1
+  boostMultiplier: 2
+  breakMultiplier: 0.5
+  boostBreakDuration: 3
+  boostBreakCooldown: 2
+  virtualCamera: {fileID: 766732588}
+  boostFOV: 80
+  breakFOV: 40
+  normalFOV: 60
+  fovLerpSpeed: 5
 --- !u!54 &164605924
 Rigidbody:
   m_ObjectHideFlags: 0
