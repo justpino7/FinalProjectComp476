@@ -15,31 +15,35 @@ public class EnemyBehaviorTree : Tree
 
         TreeNode rootSelector = new Selector(new List<TreeNode>
         {
-            /*new Sequence(new List<TreeNode>
+            new Sequence(new List<TreeNode>
             {
-                //new CheckSharedInfo(),
-                //new CheckSeekerOrPlayerFOV(),
+                new CheckObstacles(),
+                new TaskFleeObstacles()
+            }),
+            new Sequence(new List<TreeNode>
+            {
+                new CheckIfGrouped(),
+                new TaskGroupMoveAndFire()
+            }),
+            new Sequence(new List<TreeNode>
+            {
+                new CheckEnemyDeathCount(),
+                new TaskGroup()
+            }),
+            new Sequence(new List<TreeNode>
+            {
+                new CheckEnemyHealth(),
                 new Selector(new List<TreeNode>
                 {
-                    *//*new Sequence(new List<TreeNode>
-                    {
-                        new CheckChaserChasing(),
-                        new TaskFlank(chaserTransform, targetTransform, flankDistance, speed)
-                    }),*//*
                     new Sequence(new List<TreeNode>
                     {
-                        //new InvertDecorator(new CheckChaserChasing()),
-                        new TaskChase(chaserTransform, targetTransform, chaseSpeed),
-                        //new TaskShareInfo(chaserTransform, shareRadius, targetInfoKey)
+                        new CheckLastEnemy(),
+                        new TaskSeekPlayer()
                     }),
-                    *//*new Sequence(new List<TreeNode>
-                    {
-                        new InvertDecorator(new CheckSeekerOrPlayerFOV()),
-                        new TaskRotate(chaserTransform, rotationSpeed, angle)
-                    })*//*
-                })
+                    new TaskFleeFromPlayer()
+                }),
             }),
-            new TaskPatrol(chaserTransform, patrolSpeed, pointA, pointB)*/
+            new TaskMoveAndFire()
         });
 
         return rootSelector;
