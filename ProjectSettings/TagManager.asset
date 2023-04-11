@@ -9,6 +9,8 @@ TagManager:
   - Terrain
   - GamePlane
   - Structure
+  - Asteroid
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
