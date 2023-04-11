@@ -21,7 +21,11 @@ public class EnvironmentEnemy : MonoBehaviour
     public float shootingRange = 50.0f;
     public int numberOfProjectiles = 8;
 
-    public float aimRadius = 10.0f; // Add this line
+    public float aimRadius = 40.0f;
+    public AudioSource explosionAudio;
+
+    private float hitCooldown = 0.5f;
+    private float lastHitTime;
 
     private void Start()
     {
@@ -105,7 +109,20 @@ public class EnvironmentEnemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
-            Destroy(this.gameObject);
+            if (Time.time - lastHitTime > hitCooldown)
+            {
+                explosionAudio.Play();
+                ScoreManager.AddPoints(15);
+                lastHitTime = Time.time;
+                Debug.Log("+ 15 points!");
+                StartCoroutine(EnemyDeath());
+            }
         }
+    }
+
+    IEnumerator EnemyDeath()
+    {
+        yield return new WaitForSeconds(0.35f);
+        Destroy(gameObject);
     }
 }

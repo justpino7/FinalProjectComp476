@@ -9,6 +9,8 @@ public class WanderingEnemies : MonoBehaviour
     private int currentWaypointIndex = 0;
     public AudioSource explosionAudio;
 
+    private float hitCooldown = 0.5f;
+    private float lastHitTime;
 
     void Start()
     {
@@ -39,8 +41,14 @@ public class WanderingEnemies : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
-            explosionAudio.Play();
-            StartCoroutine(EnemyDeath());
+            if (Time.time - lastHitTime > hitCooldown)
+            {
+                explosionAudio.Play();
+                ScoreManager.AddPoints(10);
+                lastHitTime = Time.time;
+                Debug.Log("+ 10 points!");
+                StartCoroutine(EnemyDeath());
+            }
         }
     }
 

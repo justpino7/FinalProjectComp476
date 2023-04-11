@@ -36,6 +36,13 @@ public class HealthManager : MonoBehaviour
             hitEnemyAudio.Play();
             TakeDamage(15);
         }
+
+        else if (other.CompareTag("Asteroid"))
+        {
+            Debug.Log("Collided with Asteroid... Ouch!");
+            hitStructureAudio.Play();
+            TakeDamage(25);
+        }
     }
 
     public void TakeDamage(int damage)
