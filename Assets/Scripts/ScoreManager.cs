@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static int score = 0;
     public int highScore;
-    public Text scoreText; // Reference to the UI Text component
+    public Text[] scoreText; // Reference to the UI Text component
 
     private void Start()
     {
@@ -23,8 +23,11 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        // Update the score text
-        scoreText.text = "Score: " + score;
+        for (int i = 0; i < scoreText.Length; i++ )
+        {
+            // Update the score text
+            scoreText[i].text = "Score: " + score;
+        }
     }
 
     private void OnDestroy()

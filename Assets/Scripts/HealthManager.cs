@@ -11,6 +11,9 @@ public class HealthManager : MonoBehaviour
     public AudioSource playerDeathAudio;
     public CinemachineDollyCart dollyCart;
 
+    public GameObject endMenu;
+
+    public GameObject gameUI;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -43,6 +46,14 @@ public class HealthManager : MonoBehaviour
             hitStructureAudio.Play();
             TakeDamage(25);
         }
+        else if (other.CompareTag("End"))
+        {
+            Debug.Log("End of the game!");
+            // Freeze the scene and activate the end menu
+            Time.timeScale = 0f;
+            endMenu.SetActive(true);
+            gameUI.SetActive(false);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -51,6 +62,8 @@ public class HealthManager : MonoBehaviour
         if (health <= 0)
         {
             playerDeathAudio.Play();
+          
+
             StartCoroutine(PlayerDeath());
         }
     }
@@ -59,6 +72,11 @@ public class HealthManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
+
+        // Freeze the scene and activate the end menu
+        Time.timeScale = 0f;
+        endMenu.SetActive(true);
+        gameUI.SetActive(false);
     }
 
     public void StartTilting(float duration, float angle)

@@ -12,6 +12,7 @@ TagManager:
   - Asteroid
   - EnemyBullet
   - DollyCart
+  - End
   layers:
   - Default
   - TransparentFX
