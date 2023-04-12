@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
     public float normalFOV = 60.0f; // Normal FOV when not boosting or breaking
     public float fovLerpSpeed = 5.0f; // Speed for lerping between FOVs
 
+    public ParticleSystem barrel;
+
     public AudioSource barrelRollAudio;
     public AudioSource boostAudio;
     public AudioSource brakeAudio;
@@ -69,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && !inBarrelRoll && Time.time - lastBarrelRollTime > barrelRollCooldown)
         {
             barrelRollAudio.Play();
+            barrel.Play();
             StartCoroutine(BarrelRoll());
         }
 
