@@ -23,13 +23,14 @@ public class EndMenu : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
         gameUI.SetActive(true);
+        SceneManager.LoadScene(1);
     }
 
     public void BackToMainMenu()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
 }

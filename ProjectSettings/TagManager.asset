@@ -14,6 +14,8 @@ TagManager:
   - DollyCart
   - End
   - GroupPosition
+  - Invincible
+  - EnemyAI
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Enemy
   - Asteroid
   - Structure
-  - 
+  - EnemyAI
   - 
   - 
   - 

@@ -26,9 +26,9 @@ public class CheckIfGrouped : TreeNode
     public override NodeState Evaluate()
     {
         GameObject[] groupPositionObjects = GameObject.FindGameObjectsWithTag("GroupPosition");
-        Vector3[] enemyPositions = GameObject.FindGameObjectsWithTag("Enemy").Select(g => g.transform.position).ToArray();
+        Vector3[] enemyPositions = GameObject.FindGameObjectsWithTag("Enemy").Select(g => g.transform.position).ToArray();      // save enemy positions
         Debug.Log("Evaluate Check if grouped");
-        Vector3 destination = groupPositionObjects.Select(g => g.transform.position)
+        Vector3 destination = groupPositionObjects.Select(g => g.transform.position)        // Determine the closest group position that doesn't have any enemies within the specified tolerance
         .OrderBy(position => Vector3.Distance(position, _transform.position))
         .Where(p => enemyPositions.Where(e => Vector3.Distance(p, e) < tolerance).Count() == 0)
         .First();

@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
     public AudioSource hitEnemyAudio;
     public AudioSource playerDeathAudio;
     public CinemachineDollyCart dollyCart;
+    public AudioSource barrelRollBlockAudio;
 
     public GameObject endMenu;
 
@@ -33,11 +34,28 @@ public class HealthManager : MonoBehaviour
             TakeDamage(20);
         }
 
+        else if (other.CompareTag("EnemyAI"))
+        {
+            Debug.Log("Kamikaze enemy crashed");
+            hitEnemyAudio.Play();
+            TakeDamage(20);
+        }
+
         else if (other.CompareTag("EnemyBullet"))
         {
-            Debug.Log("Collided with Enemy Bullet!");
-            hitEnemyAudio.Play();
-            TakeDamage(15);
+            // Only take damage if the player is not "Invincible" 
+            if (gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Collided with Enemy Bullet!");
+                hitEnemyAudio.Play();
+                TakeDamage(15);
+            }
+
+            if (gameObject.CompareTag("Invincible"))
+            {
+                barrelRollBlockAudio.Play();
+            }
+
         }
 
         else if (other.CompareTag("Asteroid"))

@@ -6,14 +6,12 @@ using BehaviorTree;
 public class TaskFleeObstacles : TreeNode
 {
     private Transform _transform;
-    private float fleeSpeed = 15.0f;
-    private LayerMask obstacleLayerMask;
+    private float fleeSpeed = 45.0f;
+    //private float maxZDistance = 5.0f; // Set the desired maximum Z distance
 
     public TaskFleeObstacles(Transform transform)
     {
         _transform = transform;
-        // Set up the layer mask to include layers for "Enemy", "Structure", and "Asteroid"
-        obstacleLayerMask = LayerMask.GetMask("Enemy", "Structure", "Asteroid");
     }
 
     public override NodeState Evaluate()

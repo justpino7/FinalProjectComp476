@@ -92,6 +92,9 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator BarrelRoll()
     {
+        // Change player tag to "Invincible" during the barrel roll
+        gameObject.tag = "Invincible";
+
         inBarrelRoll = true;
         lastBarrelRollTime = Time.time;
 
@@ -111,6 +114,9 @@ public class PlayerMovement : MonoBehaviour
         playerModel.localEulerAngles = finalEulerAngles;
 
         inBarrelRoll = false;
+
+        // Change player tag back to "Player" after the barrel roll
+        gameObject.tag = "Player";
     }
 
     IEnumerator HandleBoostBreak()
@@ -159,7 +165,20 @@ public class PlayerMovement : MonoBehaviour
     // Allows the spaceship to follow the cursor
     void LocalMove(float x, float y, float xySpeed)
     {
-        transform.localPosition += new Vector3(x, y, 0) * xySpeed * Time.deltaTime;
+        Vector3 moveDirection = new Vector3(x, y, 0) * xySpeed * Time.deltaTime;
+        float raycastDistance = moveDirection.magnitude;
+
+        // Perform a raycast in the direction of movement to check for collisions
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, moveDirection, out hit, raycastDistance))
+        {
+            // If a collision is detected, adjust the movement distance to stop right before the wall
+            float adjustedDistance = hit.distance - 0.01f; // Add a small buffer to prevent getting stuck in the wall
+            moveDirection = moveDirection.normalized * adjustedDistance;
+        }
+
+        // Apply the movement
+        transform.localPosition += moveDirection;
         ClampPosition();
     }
 

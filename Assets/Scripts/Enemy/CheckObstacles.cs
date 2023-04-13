@@ -7,7 +7,7 @@ using System.Linq;
 public class CheckObstacles : TreeNode
 {
     private Transform _transform;
-    private float checkRadius = 5.0f; // Set the desired check radius
+    private float checkRadius = 8.0f; // Set the desired check radius
     private LayerMask obstacleLayerMask;
 
     public Transform Transfrom
@@ -23,7 +23,7 @@ public class CheckObstacles : TreeNode
     {
         _transform = transform;
         // Set up the layer mask to include layers for "Enemy", "Structure", and "Asteroid"
-        obstacleLayerMask = LayerMask.GetMask("Enemy", "Structure", "Asteroid");
+        obstacleLayerMask = LayerMask.GetMask("Enemy", "Structure", "Asteroid", "EnemyAI");
     }
 
     public override NodeState Evaluate()
