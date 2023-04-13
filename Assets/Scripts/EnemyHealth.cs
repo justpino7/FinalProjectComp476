@@ -81,11 +81,11 @@ public class EnemyHealth : MonoBehaviour
         }
         else if (isKamikazeMode && other.gameObject.CompareTag("Player"))
         {
-            TakeDamage(currentHealth); // Make the enemy lose all its health and be destroyed
+            TakeDamage(currentHealth, false); // Make the enemy lose all its health and be destroyed
         }
     }
 
-    void TakeDamage(int damage)
+    void TakeDamage(int damage, bool givePoints = true)
     {
         currentHealth -= damage;
 
@@ -109,7 +109,10 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             explosionAudio.Play();
-            ScoreManager.AddPoints(50);
+            if (givePoints)
+            {
+                ScoreManager.AddPoints(50);
+            }
             StartCoroutine(EnemyDeath());
         }
     }
