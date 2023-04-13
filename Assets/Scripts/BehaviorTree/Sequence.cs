@@ -11,15 +11,11 @@ namespace BehaviorTree
 
         public override NodeState Evaluate()
         {
-            Debug.Log("Sequence.Evaluate() called");
-            Debug.Log("Sequence.Evaluate() called, number of children: " + children.Count);
-
             bool anyChildIsRunning = false;
 
             for (int i = 0; i < children.Count; i++)
             {
                 TreeNode node = children[i];
-                Debug.Log("Evaluating child " + i + ": " + node.GetType().Name);
 
                 switch (node.Evaluate())
                 {

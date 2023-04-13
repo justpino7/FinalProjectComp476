@@ -12,16 +12,11 @@ namespace BehaviorTree
 
         public override NodeState Evaluate()
         {
-            Debug.Log("Selector.Evaluate() called");
-            Debug.Log("Selector.Evaluate() called, number of children: " + children.Count);
-
             int childIndex = 0;
             foreach (TreeNode node in children)
             {
-                Debug.Log($"Evaluating child {childIndex}: {node.GetType().Name}");
                 childIndex++;
                 NodeState childState = node.Evaluate();
-                Debug.Log($"Child {childIndex} {node.GetType().Name} returned state: {childState}");
                 switch (childState)
                 {
                     case NodeState.FAILURE:

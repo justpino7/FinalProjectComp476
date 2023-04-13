@@ -13,6 +13,7 @@ TagManager:
   - EnemyBullet
   - DollyCart
   - End
+  - GroupPosition
   layers:
   - Default
   - TransparentFX
@@ -20,9 +21,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy
+  - Asteroid
+  - Structure
   - 
   - 
   - 

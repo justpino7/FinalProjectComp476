@@ -10,6 +10,9 @@ public class RailEnemy : MonoBehaviour
     private Transform destination;
     private Cinemachine.CinemachineDollyCart dollyCart;
 
+    public bool ReachedDestination { get; private set; } = false;
+
+
     private void Start()
     {
         // Find the Dolly Cart object in the scene using its tag
@@ -36,6 +39,12 @@ public class RailEnemy : MonoBehaviour
 
                 // Match the speed with the player's speed
                 SetSpeedBasedOnDollyCart();
+
+                // Set the ReachedDestination property to true
+                ReachedDestination = true;
+
+                // Disable the RailEnemy script
+                this.enabled = false;
             }
         }
     }

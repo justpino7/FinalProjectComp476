@@ -428,9 +428,11 @@ GameObject:
   - component: {fileID: 7533937697455303205}
   - component: {fileID: 8702855226255774027}
   - component: {fileID: -8063193695217044839}
-  m_Layer: 0
+  - component: {fileID: -8743797079114160689}
+  - component: {fileID: -7854824909550709529}
+  m_Layer: 6
   m_Name: Rock Gunner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,4 +534,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arriveDistance: 0.5
   speed: 50
-  dollyCartObject: {fileID: 0}
+--- !u!114 &-8743797079114160689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326328996074671088}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444358d3cf7463c4b81d3c2f7d805a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7854824909550709529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326328996074671088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215c53e0fd4b653448a8959934da3835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeIdentifier: EnemyTree

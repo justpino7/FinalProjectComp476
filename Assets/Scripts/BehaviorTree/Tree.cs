@@ -18,7 +18,6 @@ namespace BehaviorTree
             
             if (_root != null && this is EnemyBehaviorTree && ((EnemyBehaviorTree)this).treeIdentifier == "EnemyTree")
             {
-                Debug.Log("Root node being evaluated");
                 _root.Evaluate();
             }
         }
