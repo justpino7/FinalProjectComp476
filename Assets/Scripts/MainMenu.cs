@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+   
     void Start()
     {
         // Allows the cursor to be always visible when the main menu opens
@@ -14,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+      
         SceneManager.LoadScene(1);
     }
 
